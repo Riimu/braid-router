@@ -34,7 +34,7 @@ class Router
     public function route($method, $uri)
     {
         $routes = $this->provider->getRoutes();
-        $urlPath = parse_url((string) $uri, PHP_URL_PATH);
+        $urlPath = rawurldecode(parse_url((string) $uri, PHP_URL_PATH));
         $segments = array_filter(explode('/', $urlPath), 'strlen');
         $path = '/';
 

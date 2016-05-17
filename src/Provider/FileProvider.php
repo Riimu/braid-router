@@ -59,7 +59,7 @@ class FileProvider implements RouteProvider
             $route['methods'] = $this->canonizeMethods($methods);
             $route['handler'] = (string) $handler;
 
-            $routes[$route['path']][] = $route;
+            $routes[rawurldecode($route['path'])][] = $route;
         }
 
         return $routes;
@@ -80,12 +80,12 @@ class FileProvider implements RouteProvider
         ];
 
         while ($segments && current($segments)[0] !== '{') {
-            $route['path'] .= array_shift($segments) . '/';
+            $route['path'] .= rawurlencode(array_shift($segments)) . '/';
         }
 
         foreach ($segments as $segment) {
             if ($segment[0] !== '{') {
-                $route['params'][] = sprintf('/%s/', preg_quote($segment));
+                $route['params'][] = sprintf('/^%s$/', preg_quote($segment));
                 continue;
             }
 

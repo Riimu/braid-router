@@ -16,7 +16,7 @@ interface RouteProvider
      *
      * Each route definition must be an array that consists of following keys:
      *
-     *   - path: The base path of the route
+     *   - path: The urlencoded base path of the route
      *   - slash: Whether the canonical route ends in a forward slash or not
      *   - params: Associate array of parameters and their regular expressions
      *   - methods: Array of methods accepted by the route in upper case

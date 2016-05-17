@@ -33,7 +33,7 @@ class Route
      */
     public function getCanonicalPath()
     {
-        $path = $this->route['path'] . implode('/', $this->params);
+        $path = $this->route['path'] . implode('/', array_map('rawurlencode', $this->params));
 
         if ($this->route['slash']) {
             $path .= '/';
