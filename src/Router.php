@@ -2,7 +2,7 @@
 
 namespace Riimu\Braid\Router;
 
-use Riimu\Braid\Router\Provider\RouteProvider;
+use Riimu\Braid\Router\Provider\ProviderInterface;
 
 /**
  * Matches provided uris to the respective routes.
@@ -13,14 +13,14 @@ use Riimu\Braid\Router\Provider\RouteProvider;
  */
 class Router
 {
-    /** @var RouteProvider The route provider */
+    /** @var ProviderInterface The route provider */
     private $provider;
 
     /**
      * Router constructor.
-     * @param RouteProvider $provider The route provider for the router
+     * @param ProviderInterface $provider The route provider for the router
      */
-    public function __construct(RouteProvider $provider)
+    public function __construct(ProviderInterface $provider)
     {
         $this->provider = $provider;
     }

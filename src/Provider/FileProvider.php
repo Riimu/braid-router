@@ -22,7 +22,7 @@ namespace Riimu\Braid\Router\Provider;
  * @copyright Copyright (c) 2016, Riikka Kalliomäki
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */
-class FileProvider implements RouteProvider
+class FileProvider implements ProviderInterface
 {
     /** @var array The parsed route definitions */
     private $routes;

@@ -9,7 +9,7 @@ namespace Riimu\Braid\Router\Provider;
  * @copyright Copyright (c) 2016, Riikka Kalliomäki
  * @license http://opensource.org/licenses/mit-license.php MIT License
  */
-interface RouteProvider
+interface ProviderInterface
 {
     /**
      * Returns the grouped route definitions.
