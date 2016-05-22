@@ -72,13 +72,13 @@ class Router
                 continue;
             }
 
-            foreach (array_values($routes['params']) as $i => $regexp) {
+            foreach (array_values($route['params']) as $i => $regexp) {
                 if (!preg_match($regexp, $params[$i])) {
                     continue;
                 }
             }
 
-            $values = array_combine(array_keys($routes['params']), $params);
+            $values = array_combine(array_keys($route['params']), $params);
             $values = array_filter($values, 'is_string', ARRAY_FILTER_USE_KEY);
 
             return new Route($route, $method, $values);

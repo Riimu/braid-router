@@ -35,7 +35,7 @@ class Route
     {
         $path = $this->route['path'] . implode('/', array_map('rawurlencode', $this->params));
 
-        if ($this->route['slash']) {
+        if ($this->route['slash'] && $path !== '/') {
             $path .= '/';
         }
 
